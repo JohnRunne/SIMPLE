@@ -1,0 +1,94 @@
+<!-- https://www.perplexity.ai/search/beispiel-mini-app-javascript-w-iQR7ExcTQ.yk.kcs.r8SWQ
+###############################################################################
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Webradio</title>
+</head>
+
+<body>
+  <h2>Live Webradio</h2>
+  <audio id="webradio" controls>
+    <source src="https://streams.ilovemusic.de/iloveradio1.mp3" type="audio/mpeg">
+    Dein Browser unterstützt kein Audioelement.
+  </audio>
+</body>
+</html>
+
+
+###############################################################################
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=2.0, user-scalable=yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta charset="UTF-8">
+
+	<title>SIMPLE AUDIO</title>
+</head>
+
+<body>
+	<h2>SIMPLE RADIO</h2>
+
+	<audio id="webradio" controls>
+	<source src="https://streams.ilovemusic.de/iloveradio1.mp3" type="audio/mpeg">
+	<source src="http://onair.krone.at/kronehit.mp3" type="audio/mpeg">
+
+
+
+
+
+	<label for="streamSelect">SENDER:</label>
+	<select id="streamSelect">
+		<option value="https://mp3channels.webradio.de/energywien">ENERGY Wien</option>
+		<option value="http://icecast.radiofrance.fr/franceinter-midfi.mp3">France Inter</option>
+		<option value="https://streams.ilovemusic.de/iloveradio1.mp3">I Love Radio</option>
+		<option value="http://onair.krone.at/kronehit.mp3">KRONEHIT</option>
+	</select>
+	<br><br>
+
+	<button onclick="playRadio()">PLAY</button>
+	<button onclick="pauseRadio()">PAUSE</button>
+	<button onclick="audio()">AUDIO</button>
+	<br><br>
+	<audio id="radio" controls></audio>
+
+	<style>
+		#radio {
+			width: 170px;
+			height: 40px;
+		}
+	</style>
+
+	<script>
+		const audio = document.getElementById('radio');
+		const select = document.getElementById('streamSelect');
+
+		function playRadio() {
+			//audio.src = select.value;
+			audio.src = streamSelect.value;
+			audio.play();
+		}
+
+		function pauseRadio() {
+			audio.pause();
+		}
+
+		function audio() {
+			const audio = new Audio("http://onair.krone.at/kronehit.mp3"); 
+
+			audio.play();
+		}
+
+	</script>
+
+</body>
+</html>
+
+
